@@ -63,6 +63,7 @@ ggplot(smoothed, aes(x=State,y=SmoothedProportion)) +
 smoothed_spread = smoothed %>%
   spread(State,SmoothedProportion)
 write_csv(smoothed_spread,"../data/priors_gan_smoothed.csv")
+write_csv(smoothed_spread,"../../../data/priors_gan_smoothed.csv")
 
 # get empirical unsmoothed priors
 priors = as.data.frame(prop.table(table(r$Item,r$response),mar=c(1)))
